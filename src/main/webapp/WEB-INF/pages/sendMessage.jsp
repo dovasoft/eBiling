@@ -46,7 +46,7 @@ function sendSms() {
 					<div class="block-footer">
 						<aside class="block-footer-left sucessfully" id="unc" style="display: none">Save Sucessfully</aside>
 						<aside class="block-footer-right">
-							<input class="btn-cancel" name="" value="Cancel" type="button" >
+							<input class="btn-cancel" name="" value="Clear" type="button" >
 							<input class="btn-save" name="" value="Send" id="sendId" type="button" onclick=" sendSms();">
 						</aside>
 					</div>

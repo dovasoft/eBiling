@@ -49,16 +49,21 @@ $("#logout").click(function(){
          <li> <a href="purchaseInfoHome" id="purchaser">Purchaser</a> </li>
 		<li> <a href="newBill" id="newBill">New Bill</a> </li>
 		<li> <a href="searchBill" id="searchBill">BillSearch</a> </li>
-		<!-- <li> <a href="billInfoHome">Bill Info</a> </li> -->
-		<li> <a href="unBillCart" id="unBill">UnBill</a> </li>
-		<!-- <li> <a href="clientHome">ClientInfo</a> </li> -->
+		<li> <a href="unBillCart" id="unBill">Consignment Bill</a> </li>
 		<li> <a href="damageHome" id="damage">Damage</a> </li>
+		<% 
+		 if(register.getRegType().equals("Admin")) {
+			 
+		 
+		%>
 		<li> <a href="uploadHome" id="upload">Upload</a> </li>
 		<li> <a href="allUsers" id="allUser">Users</a> </li>
+		<% 
+		 }
+		%>
 		<li> <a href="sendSmsHome" id="sendSms">Send Sms</a> </li>
-		<!-- <li> <a href="statusHome">Status</a> </li> -->
 		
-        <li style="padding-left:19%; color:#283da2;">Hi, <%=register.getRegName() %><a href="logOut" id="logout" style="margin-left: 73px;">Logout</a></li>
+        <li style="padding-left:19%; color:#283da2;margin-left: 743px;position: absolute;"><b>Hi, <%=register.getRegName() %></b><a href="logOut" id="logout" style="margin-left: 90px;position: absolute;margin-top:-5px;"">Logout</a></li>
         <% }%>
 		
 </ul>

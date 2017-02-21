@@ -177,14 +177,14 @@ $(function() {
                     <label class="login-label-text">Password</label>
                     <input class="input-login" type="password" name="cnumber" value="" id="password" onkeydown="removeBorder(this.id);" style="margin-left:12px; width: 233px;" />
                 </div>
-                <div class="blck-login"> 
+                <!-- <div class="blck-login"> 
                 	<a href="resetPasswordHome" class="login-links" style="padding-right:36px;">Reset Password</a>  | <a href="registration" class="login-links" style="padding-left:29px;">Register</a> 
-                </div>            
+                </div>    -->         
             </div>
             <div class="block-footer">
                 <aside class="block-footer-left sucessfully" id="unc" style="display: none">Save Sucessfully</aside>
                 <aside class="block-footer-right">
-                    <input class="btn-cancel" name="" value="Cancel" type="button" onclick="dataClear();">
+                    <input class="btn-cancel" name="" value="Clear" type="button" onclick="dataClear();">
                     <input class="btn-save" name="" id="login" value="Login" type="submit" onclick="validateLogin();">
                 </aside>
             </div>

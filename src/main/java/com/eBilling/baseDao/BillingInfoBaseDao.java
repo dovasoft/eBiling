@@ -112,7 +112,31 @@ public class BillingInfoBaseDao {
 	public List<BillingInfo> searchBillInfo(BillingInfo billingInfo) {
 	  try{
 		StringBuffer objStringBuffer = new StringBuffer();
-		objStringBuffer .append("SELECT * from billinginfo  where billNo like '"+billingInfo.getBillNo()+"%' or phone like '"+billingInfo.getPhone()+"%' or name like '"+billingInfo.getName()+"%'" );
+		 objStringBuffer .append("SELECT * from billinginfo ");
+
+		if(StringUtils.isNotEmpty(billingInfo.getBillNo())){
+			//if(StringUtils.isNotEmpty(objStringBuffer)){
+				objStringBuffer .append("where ");
+		//	}
+			objStringBuffer .append("billNo like '"+billingInfo.getBillNo()+"%'");
+		}
+		if(StringUtils.isNotEmpty(billingInfo.getName()) ){
+			if(StringUtils.isNotEmpty(billingInfo.getBillNo())){
+				objStringBuffer .append("and ");
+			}else{
+				objStringBuffer .append("where ");
+			}
+			objStringBuffer .append(" name like '"+billingInfo.getName()+"%'");
+		}
+		if(StringUtils.isNotEmpty(billingInfo.getPhone())){
+			if(StringUtils.isNotEmpty(billingInfo.getBillNo()) || StringUtils.isNotEmpty(billingInfo.getName()) ){
+				objStringBuffer .append("and ");
+			}else{
+				objStringBuffer .append("where ");
+			}
+			objStringBuffer .append("phone like '"+billingInfo.getPhone()+"%'");
+		}
+		//objStringBuffer .append("SELECT * from billinginfo  where billNo like '"+billingInfo.getBillNo()+"%' or phone like '"+billingInfo.getPhone()+"%' or name like '"+billingInfo.getName()+"%'" );
 		String sql = objStringBuffer.toString();
 		System.out.println("dataaaaa==="+sql);
 		return jdbcTemplate.query(sql, new BeanPropertyRowMapper<BillingInfo>(BillingInfo.class));

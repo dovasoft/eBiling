@@ -345,6 +345,9 @@ public class BillingController {
 				 String newJson = billInfoController.billInfoHome( objResponce,sBillId, objSession,  objRequest);
 				 objSession.setAttribute("updateCart", "");
 				 objSession.setAttribute("sessionBillId","");
+				 String showPan= data.getString("showPan");
+				 
+				 objSession.setAttribute("showPan",showPan);
 				 
 					
 		  	 }
@@ -432,6 +435,7 @@ public class BillingController {
 			billingInfoCart.setPayment(data.getString("payment"));
 			billingInfoCart.setPackSlipNo(data.getString("packSlipNo"));
 			billingInfoCart.setNetAmount(data.getString("netAmount"));
+			billingInfoCart.setShowPan(data.getString("showPan"));
 			//System.out.println("netamoutnt=="+data.getString("netAmount"));
 			
 			isSave=objBillingInfoCartService.updateBillInfoCart(billingInfoCart);
@@ -601,6 +605,7 @@ public class BillingController {
 				// Getting product list by billId
 				lstBillingInfoCart = objBillingInfoCartService.getAllBillInfoCartByBillId(billingInfoCart);
 				System.out.println("listBillingDetailsCart==="+lstBillingInfoCart.size());
+
 				for(int i=0;i<lstBillingInfoCart.size();i++){
 					billingInfoCart = lstBillingInfoCart.get(i);
 					System.out.println("billingInfoCart=="+billingInfoCart.toString());
@@ -609,7 +614,11 @@ public class BillingController {
 				// Getting product list by billId
 				listBillingDetails = objBillingDetatilsCartService.getAllbillDeteailsCart(sBillId);
 				
-				
+				if(listBillingDetails.size() == 0){
+					cancelBill(sBillId, session);
+					billingInfoCart = null;
+				}
+				if(billingInfoCart != null){
 				billingInfoCart = objBillingDetatilsCartService.calculateTotal(listBillingDetails, billingInfoCart);
 				billingInfoCart.setListBillingInfoCart(listBillingDetails);
 				
@@ -628,8 +637,7 @@ public class BillingController {
 				}
 				isUpdate=objBillingInfoCartService.updateBillInfoCart(billingInfoCart);
 				System.out.println("isUpdate"+isUpdate);
-				
-				System.out.println("hi,,,,,,");
+				}
 		 }catch(Exception e){
 			 e.printStackTrace();
 		 }
@@ -647,6 +655,6 @@ public class BillingController {
 		objBillingDetatilsCartService.deleteBillDetailsCart(sBillId);
 		objBillingInfoCartService.deleteBillInfoCart(sBillId);
 		objSession.setAttribute("sessionBillId","");
-		return sJson;
+		return "newBill";
 	}
 }

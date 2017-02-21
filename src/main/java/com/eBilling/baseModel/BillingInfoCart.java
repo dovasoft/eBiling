@@ -28,7 +28,16 @@ public class BillingInfoCart {
 	protected String payment;
 	protected String packSlipNo;
 	protected String netAmount;
+	protected String showPan;
 	
+	
+	
+	public String getShowPan() {
+		return showPan;
+	}
+	public void setShowPan(String showPan) {
+		this.showPan = showPan;
+	}
 	public String getNetAmount() {
 		return netAmount;
 	}

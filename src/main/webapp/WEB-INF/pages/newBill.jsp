@@ -69,7 +69,7 @@
 				changeMonth : true,
 				changeYear : true,
 				showButtonPanel : false,
-				dateFormat : 'yy-mm-dd'
+				dateFormat : 'dd-mm-yy'
 			});
 		});
 		$(function() {
@@ -224,9 +224,16 @@
 		function customerType() {
 			var custType =$("#customerType").val();
 			if(custType == "oldCustmer"){
+				$("#purchaserName").val("");
 				$("#name").show();
+				
 				$("#purchaserName").hide();
 			}else{
+				 $('#phone').val("");
+		  		 $('#address').val("");
+		  		$('#name').val("");
+		  		$('#eMail').val("");
+		  		$('#tinNo').val("");
 				$("#name").hide();
 				$("#purchaserName").show();
 			}
@@ -278,7 +285,7 @@
 					<div class="block-footer">
 						<aside class="block-footer-left sucessfully"  id="unc" style="display: none">Sucessfully Message</aside>
 						<aside class="block-footer-right">
-							<input class="btn-cancel" name="" value="Cancel" type="button" onclick="cancelBill(id);">
+							<input class="btn-cancel" name="" value="Clear" type="button" onclick="dataClear();">
 							<input class="btn-save" value="Save" id="saveIds" type="button" onClick="newBill();">
 						</aside>
 					</div>
@@ -419,14 +426,26 @@
                                                             </div>
                                                             <div class="block-input last">
                                                                 <label>Net Amount</label>
-                                                                <input disabled="disabled" type="text" name="netAmount" id="netAmount">
+                                                                <input disabled="disabled" type="hidden" name="netAmount" id="netAmount" onchange=" test();">
+                                                                <div id="showAmount" style="margin-top: 16px;margin-top: -10px;font-size: 43px;color: green;"></div>
+                                                                <div id="wordsAmount" style="margin-left: -379px;margin-top: 23px;color: red;font-size: 15px;text-align: center;font-weight: bold;"></div>
+                                                                
                                                             </div>
                                                         </div>
-                                                        <div class="block-searchbill">
-                                                         <button style="margin-bottom: 138px;margin-right: 8px;margin-left: -51px;">More info</button>
-                                                         <div id="moreInfoId" style="display:none;">
-                                                         <p>This is content show/hide</p>
-                                                         <div class="block-searchbill" id="labelId" >
+                                                        <div class="block-searchbill" id="labelId" style="margin-top: -120px; margin-bottom: -1px;" >
+                                                        
+                                                            <div class="block-input" style="margin-top: 124px;">
+                                                                <label>Show Our Tin NO</label>
+                                                                <input type="checkbox" name="showPan" value="1" id="showPan" style=" margin-left:-89px;">                
+                                                            </div>                                                        
+                                                           
+                                                        </div>
+                                                        <div class="block-searchbill" ><aside class="block-footer-right sucessfully" id="unc2" style="display:none" >Delete Sucessfully</aside>
+																<div><button style="margin-bottom: 138px;margin-right: 8px;margin-left: 72px;">More info</button></div>                                                         
+                                                         </div>
+                                                         
+                                                          <div id="moreInfoId" style="display:none;">
+                                                         <div class="block-searchbill" id="labelId" style="margin-top: -120px; margin-bottom: -1px;" >
                                                         
                                                             <div class="block-input">
                                                                 <label>Order No</label>
@@ -442,7 +461,7 @@
                                                             </div>
                                                         </div>
                                                         
-                                                        <div class="block-searchbill" id="labelId1">
+                                                        <div class="block-searchbill" id="labelId1" style=" margin-top: -83px;">
                                                         
                                                             <div class="block-input">
                                                                 <label>LR No</label>
@@ -458,7 +477,7 @@
                                                             </div>
                                                         </div>
                                                         
-                                                        <div class="block-searchbill" id="labelId2" >
+                                                        <div class="block-searchbill" id="labelId2" style="margin-top: -47px; margin-bottom: -22px;" >
                                                         
                                                             <div class="block-input">
                                                                 <label>Pack Slip No</label>
@@ -473,7 +492,7 @@
                                                                 <input type="text" name="dispatchedBy" id="dispatchedBy"> 
                                                             </div>
                                                         </div>
-                                                        <div class="block-searchbill" id="labelId3">
+                                                        <div class="block-searchbill" id="labelId3"  style="margin-top: -9px;">
                                                         
                                                             <div class="block-input">
                                                                 <label>Terms of Payment</label>
@@ -493,8 +512,8 @@
 					<aside class="block-footer-left"><exptotal></exptotal></aside>
 					<aside class="block-footer-right">
 					<input class="btn-cancel" name="" value="Cancel" type="button" onclick="cancelBill(this.id)">
-						<input class="btn-save" name="" value="Cart" type="button" onclick="saveInfoCart();">
-						<input class="btn-save" name="" value="Bill" id="printBill" type="submit" onclick="updateBillInfoCart();" style=" margin-right: 118px; margin-top: -25px;">
+						<input class="btn-save" name="" value="Consignment" type="button" onclick="saveInfoCart();" style="    margin-right: 71px;margin-top: -25px;">>
+						<input class="btn-save" name="" value="Bill" id="printBill" type="submit" onclick="updateBillInfoCart();" style="margin-right: 177px;margin-top: -26px;">
 					</aside>
 				</div>
 			</div>

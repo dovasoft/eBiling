@@ -114,7 +114,7 @@
             <div class="block-footer">
                 <aside class="block-footer-left sucessfully" id="unc" style="display: none">Save Sucessfully</aside>
                 <aside class="block-footer-right">
-                    <input class="btn-cancel" name="" value="Cancel" type="button" onclick="dataClear();">
+                    <input class="btn-cancel" name="" value="Clear" type="button" onclick="dataClear();">
                     <input class="btn-save" name="" id="forget" value="submit" type="submit" onclick="forgetPassword();">
                 </aside>
             </div>

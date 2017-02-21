@@ -39,5 +39,4 @@
                 </header>
                 <!-- END: HEADER --> 
                 <div id="page-title">
-                    <ul><li><h3><marquee behavior="scroll" direction="left">Welcome to Gowthami Handlooms...</marquee></h3></li><li>
-                    </li></ul></div></div></div></body></html>
+                    <h3><marquee behavior="scroll" direction="left" style="color: #333333;">Welcome to Gowthami Handlooms...</marquee></h3></div></div></div></body></html>

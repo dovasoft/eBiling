@@ -67,7 +67,7 @@
             <div class="block-footer">
                 <aside class="block-footer-left sucessfully">Sucessfully Message</aside>
                 <aside class="block-footer-right">
-                    <input class="btn-cancel" name="" value="Cancel" type="button">
+                    <input class="btn-cancel" name="" value="Clear" type="button">
                     <input class="btn-save" name="" value="Save" type="submit">
                 </aside>
             </div>

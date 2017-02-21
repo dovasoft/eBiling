@@ -74,7 +74,7 @@ public class BillingInfoCartBaseDao {
 	public List<BillingInfoCart> getAllBillInfoCart() {
 		List<BillingInfoCart> retlist = null;
 		try {
-			String sql = "SELECT * from billinginfocart where billNo != 'null'" ;
+			String sql = "SELECT * from billinginfocart where name != 'null'" ;
 			retlist = jdbcTemplate.query(sql, new BeanPropertyRowMapper<BillingInfoCart>(BillingInfoCart.class));
 
 		} catch (Exception e) {

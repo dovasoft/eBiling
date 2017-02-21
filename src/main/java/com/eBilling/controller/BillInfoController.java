@@ -58,6 +58,8 @@ public class BillInfoController {
 			System.out.println("lstBillingInfo==size===="+lstBillingInfo.size());
 			for(int i=0;i<lstBillingInfo.size();i++){
 				existBillingInfo =lstBillingInfo.get(i);
+				
+				System.out.println("billDate---"+existBillingInfo.getBillDate());
 			}
 			// Getting product list by billId
 						listBillingDetails = billingDeteailsServicesImpl.getAllBillDetailsByBillNo(sBillNo);
@@ -109,6 +111,7 @@ public class BillInfoController {
 			System.out.println("lstBillingInfo==size===="+lstBillingInfoCart.size());
 			for(int i=0;i<lstBillingInfoCart.size();i++){
 				existBillingInfoCart =lstBillingInfoCart.get(i);
+				
 			}
 			
 			// Getting product list by billId

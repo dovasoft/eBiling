@@ -13,7 +13,7 @@ public class CommonUtils {
 	
 	public static String getDate() {
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		Calendar cal = Calendar.getInstance();
 		 String regDate = dateFormat.format(cal.getTime());
 		return regDate;
@@ -24,5 +24,12 @@ public class CommonUtils {
 	    x = x + 1;
 	    String randomPIN = (x + "") + ( ((int)(Math.random()*1000)) + "" );
 	    return randomPIN;
+	}
+	public static String getIndainDate(String sDate) {
+
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		 String regDate = dateFormat.format(sDate);
+		return regDate;
 	}
 }

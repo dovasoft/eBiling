@@ -131,13 +131,6 @@ function productRegister() {
 			    $('#address').addClass('your-class');
 			    return false;
 			    }
-		    else if($('#tinNo').val().length == 0 ) {
-			    $('#tinNo').css('color','red');
-			    $("#tinNo").css("border-color","red");
-			    $("#tinNo").attr("placeholder","Please enter tinNo");
-			    $('#tinNo').addClass('your-class');
-			    return false;
-			    }
 		    
 		    else if($("#purchaseId").val() != ""){
 					updatePurchaseInfo();

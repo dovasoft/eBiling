@@ -33,6 +33,17 @@ public class BillingInfo {
 	protected List<PurchaserInfo> listPurchase;
 	protected String netAmount;
 	
+protected String showPan;
+	
+	
+	
+	public String getShowPan() {
+		return showPan;
+	}
+	public void setShowPan(String showPan) {
+		this.showPan = showPan;
+	}
+	
 	public String getNetAmount() {
 		return netAmount;
 	}

@@ -163,31 +163,7 @@ function showUnBillDetailsData(response){
 	//paginationTable(3);
 }
 
-/* function showUnBillPrintData(response){
-	serviceUnitArray = {};
-	response = jQuery.parseJSON(response);
-	if(response != undefined && response.length >0){
-	$.each(response,function(i, catObj) {
-		//alert('catObj.billId=='+catObj.billId);
-		$('#billNo').text(catObj.billNo);
-		$('#billDate').text(catObj.billDate);
-		 $('#lrNo').text(catObj.lrNo);
-		 $('#lrDate').text(catObj.lrDate);
-		 $('#orderNo').text(catObj.orderNo);
-		 $('#orderDate').text(catObj.orderDate);
-		 $('#dispatchedBy').text(catObj.dispatchedBy);
-		 $('#noOfPacks').text(catObj.noOfPacks);
-		 $('#orderBy').text(catObj.orderBy);
-		 $('#packSlipNo').text(catObj.packSlipNo);
-		 $('#termsOfPayment').text(catObj.termOfPayment);
-		 $('#terms').text(catObj.terms);
-		 $('#name').text(catObj.name);
-		 $('#discount').text(catObj.discount);
-		 $('#phone').text(catObj.phone);
-		 $('#address').text(catObj.address);
-	});
-	}
-} */
+
 function printBill(){
 	//alert('printBill');
 	$('#newbill').hide();
@@ -213,6 +189,10 @@ function dataCancel() {
 		window.location.href="/eBilling/unBillCart";
 	}
 }
+var panNo = '${sessionScope.showPan}';
+if(panNo == "1"){
+	$('#ourTin').text(1234567890);
+}
 
 </script>
 		<section id="printSec" class="container">
@@ -236,7 +216,7 @@ function dataCancel() {
 					    		<p class="text-prop">Prop: <span>D. Kumaraswamy</span></p>
 					    		<p class="text-address">MIG-183, 1<small>st</small>floor,Bharat Nagar Colony,</p>  
 					    		<p class="text-address">Moosapet,Hyderabad - 500 018</p>
-					    		<h4 class="text-tin">Tin no: <span>1234567890</span></h4> 	
+					    		<h4 class="text-tin">Tin no: <div id="ourTin"><span ></span></div></h4> 	
 					    </div>
 					    <div class="block-3">
 							<div class="mobile-no">
@@ -399,7 +379,7 @@ function dataCancel() {
 				<div class="block-footer" >
 					<aside class="block-footer-left"><exptotal></exptotal></aside>
 					<aside class="block-footer-right">				
-					<input class="btn-cancel" name="" value="Cancel" type="button" onclick="dataCancel();">
+					<input class="btn-cancel" name="" value="Clear" type="button" onclick="dataCancel();">
 						<input class="btn-save" name="" value="Print" type="button" id="print" onclick="printBill();">
 					</aside>
 				</div>

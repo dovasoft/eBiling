@@ -121,7 +121,7 @@
 					<div class="block-footer">
 						<aside class="block-footer-left sucessfully" id="unc" style="display: none">Save Sucessfully</aside>
 						<aside class="block-footer-right">
-							<input class="btn-cancel" name="" value="Cancel" type="button" onclick="dataClear();">
+							<input class="btn-cancel" name="" value="Clear" type="button" onclick="dataClear();">
 							<input class="btn-save" name="" value="Save" type="submit" onclick="productRegister();">
 						</aside>
 					</div>
@@ -180,7 +180,7 @@
 				<div class="block-footer">
 					<aside class="block-footer-left"><exptotal></exptotal></aside>
 					<aside class="block-footer-right">
-						<!-- <input class="btn-cancel" name="" value="Cancel" type="button">
+						<!-- <input class="btn-cancel" name="" value="Clear" type="button">
 						<input class="btn-save" name="" value="Save" type="submit"> -->
 					</aside>
 				</div>

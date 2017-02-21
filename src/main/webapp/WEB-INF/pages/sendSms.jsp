@@ -78,7 +78,7 @@ function sendSms(){
 					<div class="block-footer">
 						<aside class="block-footer-left sucessfully" id="unc" style="display: none">Save Sucessfully</aside>
 						<aside class="block-footer-right">
-							 <input class="btn-cancel" value="Cancel"  name="Cancel" type="button" onclick="dataClear();" >
+							 <input class="btn-cancel" value="Clear"  name="Cancel" type="button" onclick="dataClear();" >
                     <input class="btn-save" value="Submit" id="Submit" type="button" onClick="sendSms();">
 						</aside>
 					</div>

@@ -102,7 +102,7 @@ $(document).ready(function() {
 					<div class="block-footer">
 						<aside class="block-footer-left sucessfully" id="unc" style="display: none">Save Sucessfully</aside>
 						<aside class="block-footer-right">
-							 <input class="btn-cancel" value="cancel"  name="Cancel" type="button" onclick="statusDataClear();" >
+							 <input class="btn-cancel" value="Clear"  name="Cancel" type="button" onclick="statusDataClear();" >
                     <input class="btn-save" value="Save" id="saveIds" type="button" onClick="statusReg();">
 						</aside>
 					</div>
@@ -149,7 +149,7 @@ $(document).ready(function() {
 				<div class="block-footer">
 					<aside class="block-footer-left"><exptotal></exptotal></aside>
 					<aside class="block-footer-right">
-						<!-- <input class="btn-cancel" name="" value="Cancel" type="button">
+						<!-- <input class="btn-cancel" name="" value="Clear" type="button">
 						<input class="btn-save" name="" value="Save" type="submit"> -->
 					</aside>
 				</div>
